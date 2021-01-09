@@ -84,7 +84,7 @@ Total_Dataset <- mutate(Total_Dataset, Age_Category = ifelse(Age >= 0 & Age <= 1
                                                       ifelse(Age >= 25 & Age <=34, "Young Adult",\
                                                              ifelse(Age >= 35 & Age <= 44, "Adult",\
                                                                     ifelse(Age >=45 & Age <=54, "Middle Age",\
-                                                                           ifelse(Age >=55 & Age <=64, "Elderly","Pensioner")))))))\
+                                                                           ifelse(Age >=55 & Age <=64, "Elderly","Pensioner")))))))
 
 
 View(Total_Dataset)
@@ -93,45 +93,45 @@ View(Total_Dataset)
 
 library(ggplot2)\
 a <-  Total_Dataset %>% filter(Age_Category %in% c("Child","Youth","Young Adult","Adult","Middle Age","Elderly","Pensioner")) %>% group_by(Criminal_Record, Age_Category) %>%\
-head(a) #first rows
-tail(a) #last rows
-  ggplot(a) + geom_bar(aes(factor(Age_Category) ,fill= Criminal_Record) ,colour = "black",position = "stack")+
-  labs(subtitle="Analysis of Criminal Record & Age Category",
-       y="Criminal Record",
-       x="Age Category",
-       title = "Barplot Of Criminal Record") +
-  scale_fill_manual(values=c("#69b3a2", "#404080")) +
- theme(axis.title.x = element_text(colour="DarkGreen", size = 20),
-           axis.title.y = element_text(colour="Red", size = 20),
-           axis.text.x = element_text(size=10),
-           axis.text.y = element_text(size = 10),
-           legend.title = element_text(size=15),
-           legend.text = element_text(size = 15),
-           plot.title = element_text(colour = "DarkBlue", size = 30, family = "Courier"),
+head(a) #first rows\
+tail(a) #last rows\
+  ggplot(a) + geom_bar(aes(factor(Age_Category) ,fill= Criminal_Record) ,colour = "black",position = "stack")+\
+  labs(subtitle="Analysis of Criminal Record & Age Category",\
+       y="Criminal Record",\
+       x="Age Category",\
+       title = "Barplot Of Criminal Record") +\
+  scale_fill_manual(values=c("#69b3a2", "#404080")) +\
+ theme(axis.title.x = element_text(colour="DarkGreen", size = 20),\
+           axis.title.y = element_text(colour="Red", size = 20),\
+           axis.text.x = element_text(size=10),\
+           axis.text.y = element_text(size = 10),\
+           legend.title = element_text(size=15),\
+           legend.text = element_text(size = 15),\
+           plot.title = element_text(colour = "DarkBlue", size = 30, family = "Courier"),\
            plot.subtitle = element_text(colour = "black",size = 20))
 
 
 11. Create a smaller dataframe where the health information is available.\
 library(dplyr)\
-Health_Data <- Total_Dataset %>% filter(!is.na(Health))  #is.na to remove the NA values
+Health_Data <- Total_Dataset %>% filter(!is.na(Health))  #is.na to remove the NA values\
 View(Health_Data)
 
 12. Explore the variables in the dataset(both with and without the health variable)\
 library(ggplot2)
 
-ggplot(data=Health_Data, aes(x=Age, y=Salary, colour=Age_Category)) + geom_point(size=2)+
-  labs(subtitle="Analysis of Age & Salary",
-       y="Salary",
-       x="Age",
-       title = "Scatterplot") +
-  geom_smooth(method=lm) +
-theme(axis.title.x = element_text(colour="DarkGreen", size = 20),
-           axis.title.y = element_text(colour="Red", size = 20),
-           axis.text.x = element_text(size=10),
-           axis.text.y = element_text(size = 10),
-           legend.title = element_text(size=15),
-           legend.text = element_text(size = 15),
-      plot.title = element_text(colour = "DarkBlue", size = 30, family = "Courier"),
+ggplot(data=Health_Data, aes(x=Age, y=Salary, colour=Age_Category)) + geom_point(size=2)+\
+  labs(subtitle="Analysis of Age & Salary",\
+       y="Salary",\
+       x="Age",\
+       title = "Scatterplot") +\
+  geom_smooth(method=lm) +\
+theme(axis.title.x = element_text(colour="DarkGreen", size = 20),\
+           axis.title.y = element_text(colour="Red", size = 20),\
+           axis.text.x = element_text(size=10),\
+           axis.text.y = element_text(size = 10),\
+           legend.title = element_text(size=15),\
+           legend.text = element_text(size = 15),\
+      plot.title = element_text(colour = "DarkBlue", size = 30, family = "Courier"),\
       plot.subtitle = element_text(colour = "black",size = 20))
 
 
