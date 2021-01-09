@@ -57,7 +57,7 @@ View(New_Dataset)
 install.packages("stringr")\
 library("stringr")
 
-#(\\w) extract the first element of string
+#(\\w) extract the first element of string\
 New_Dataset$Prefix_Surname <- str_extract(New_Dataset$Surname,"(\\w)")\
 New_Dataset$Prefix_Forename <- str_extract(New_Dataset$Forename,"(\\w)")\
 New_Dataset$Additional_ID <- paste(New_Dataset$New_IDNum,New_Dataset$Prefix_Forename,New_Dataset$Prefix_Surname)\
