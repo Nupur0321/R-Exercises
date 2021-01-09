@@ -163,19 +163,19 @@ ggplot(data=Health_Data, aes(x=Education, y=Salary,fill=Education))+ geom_bar(st
 
 
 library(ggplot2)\
-Health_Data %>% ggplot(aes(Age_Category, Health, fill= factor(Health)))+ geom_bar(stat = "identity") +
-  labs(subtitle="Analysis of Health & Age_Category",
-       y="Health",
-       x="Age_Category",
-       title = "Barplot") +
-  scale_fill_discrete(name = "Health") +  #this will change the name of legend
-  theme(axis.title.x = element_text(colour="DarkGreen", size = 20),
-        axis.title.y = element_text(colour="Red", size = 20),
-        axis.text.x = element_text(size=15),
-        axis.text.y = element_text(size = 15),
-        legend.title = element_text(size=15),
-        legend.text = element_text(size = 15),
-        plot.title = element_text(colour = "DarkBlue", size = 30, family = "Courier"),
+Health_Data %>% ggplot(aes(Age_Category, Health, fill= factor(Health)))+ geom_bar(stat = "identity") +\
+  labs(subtitle="Analysis of Health & Age_Category",\
+       y="Health",\
+       x="Age_Category",\
+       title = "Barplot") +\
+  scale_fill_discrete(name = "Health") +  #this will change the name of legend\
+  theme(axis.title.x = element_text(colour="DarkGreen", size = 20),\
+        axis.title.y = element_text(colour="Red", size = 20),\
+        axis.text.x = element_text(size=15),\
+        axis.text.y = element_text(size = 15),\
+        legend.title = element_text(size=15),\
+        legend.text = element_text(size = 15),\
+        plot.title = element_text(colour = "DarkBlue", size = 30, family = "Courier"),\
         plot.subtitle = element_text(colour = "black",size = 20))
 
 
