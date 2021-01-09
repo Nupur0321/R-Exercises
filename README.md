@@ -78,13 +78,13 @@ View(Total_Dataset)
 
 9.You should add a column for age range. This should be as follows: (x<y means inclusive of x and exclusive of y)\
 
-library(dplyr) #to use mutate function
-Total_Dataset <- mutate(Total_Dataset, Age_Category = ifelse(Age >= 0 & Age <= 17, "Child",
-                                                ifelse(Age >= 18 & Age <= 24, "Youth",
-                                                      ifelse(Age >= 25 & Age <=34, "Young Adult",
-                                                             ifelse(Age >= 35 & Age <= 44, "Adult",
-                                                                    ifelse(Age >=45 & Age <=54, "Middle Age",
-                                                                           ifelse(Age >=55 & Age <=64, "Elderly","Pensioner")))))))
+library(dplyr) #to use mutate function\
+Total_Dataset <- mutate(Total_Dataset, Age_Category = ifelse(Age >= 0 & Age <= 17, "Child",\
+                                                ifelse(Age >= 18 & Age <= 24, "Youth",\
+                                                      ifelse(Age >= 25 & Age <=34, "Young Adult",\
+                                                             ifelse(Age >= 35 & Age <= 44, "Adult",\
+                                                                    ifelse(Age >=45 & Age <=54, "Middle Age",\
+                                                                           ifelse(Age >=55 & Age <=64, "Elderly","Pensioner")))))))\
 
 
 View(Total_Dataset)
